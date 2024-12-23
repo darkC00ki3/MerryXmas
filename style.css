@@ -1,0 +1,366 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background: #0c0c0c;
+    color: #ff0000; /* Dark hacker red text */
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1, #location {
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+    animation: glitch 1s infinite linear;
+}
+
+#location {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #00ff00;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+        transform: translate(0);
+    }
+    20% {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
+        transform: translate(-5px, 5px);
+    }
+    40% {
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+        transform: translate(5px, -5px);
+    }
+    60% {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
+        transform: translate(-5px, 5px);
+    }
+    80% {
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+        transform: translate(5px, -5px);
+    }
+    100% {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
+        transform: translate(0);
+    }
+}
+
+#holiday-message {
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: #ff4500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: pulse 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+/* Matrix-like background */
+.matrix-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+    overflow: hidden;
+}
+
+.matrix {
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    position: absolute;
+    top: -50px;
+    white-space: nowrap;
+    user-select: none;
+    animation: moveMatrix 0.5s linear infinite;
+}
+
+@keyframes moveMatrix {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Snowfall Effect */
+.snowflake {
+    position: absolute;
+    top: -10px;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: snowfall 5s linear infinite;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* Virus-like Flicker Effect */
+@keyframes virusFlicker {
+    0% {
+        opacity: 1;
+        transform: translate(0) rotate(0deg);
+    }
+    25% {
+        opacity: 0.2;
+        transform: translate(-5px, 5px) rotate(10deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(5px, -5px) rotate(-10deg);
+    }
+    75% {
+        opacity: 0.2;
+        transform: translate(-5px, 5px) rotate(10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0) rotate(0deg);
+    }
+}
+
+.virus-effect {
+    animation: virusFlicker 0.5s infinite;
+}
+
+#greeting {
+    font-size: 5em;
+}
+
+.glitch-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+    pointer-events: none;
+    animation: glitch 1s infinite linear;
+}
+
+.static-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('static_noise.gif');
+    animation: staticNoise 0.2s infinite linear;
+    z-index: -2;
+    opacity: 0.1;
+}
+
+@keyframes staticNoise {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+/* File Transfer Success Message */
+.transfer-message {
+    font-size: 1.2em;  /* Smaller size */
+    color: #00ff00;  /* Green text for a hacker feel */
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;  /* Subtle green shadow */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transform: translate(0, 0);
+    animation: glitch 0.2s infinite linear, moveUp 3s ease-in-out;
+    z-index: 9999;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, -10px);  /* Slight upward motion */
+    }
+}
+
+/* Glitch effect on text */
+@keyframes glitch {
+    0% {
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+        transform: translate(0);
+    }
+    20% {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+        transform: translate(2px, -2px);
+    }
+    60% {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+        transform: translate(-2px, 2px);
+    }
+    80% {
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+        transform: translate(2px, -2px);
+    }
+    100% {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+        transform: translate(0);
+    }
+}
+
+/* Virus Flicker Effect */
+@keyframes virusFlicker {
+    0% {
+        opacity: 1;
+        transform: translate(0) rotate(0deg);
+    }
+    25% {
+        opacity: 0.2;
+        transform: translate(-3px, 3px) rotate(8deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(3px, -3px) rotate(-8deg);
+    }
+    75% {
+        opacity: 0.2;
+        transform: translate(-3px, 3px) rotate(8deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0) rotate(0deg);
+    }
+}
+
+/* Loading Bar */
+.loading-bar {
+    position: absolute;
+    bottom: 40px; /* Above the success message */
+    right: 20px;
+    height: 4px;
+    width: 0;
+    background-color: #00ff00;  /* Green bar to match hacker theme */
+    z-index: 9999;
+    animation: loadingBar 2s linear forwards;
+}
+
+/* Glitchy Animation for Loading Bar */
+@keyframes loadingBar {
+    0% {
+        width: 0%;
+        background: #00ff00;
+    }
+    50% {
+        width: 70%;
+        background: #ff0000; /* Change to red for a hacker effect */
+    }
+    100% {
+        width: 100%;
+        background: #00ff00; /* Back to green */
+    }
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background: #0c0c0c;
+    color: #ff0000; /* Dark hacker red text */
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1, #location {
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+    animation: glitch 1s infinite linear;
+}
+
+#greeting {
+    font-size: 4vw; /* Responsive font size */
+}
+
+#location {
+    font-size: 2vw; /* Responsive font size */
+    margin-top: 1em;
+    color: #00ff00;
+}
+
+.snowflake {
+    width: 0.8vw; /* Relative width */
+    height: 0.8vw; /* Relative height */
+}
+
+.loading-bar {
+    bottom: 5%; /* Adjust position */
+    width: 80%; /* Responsive width */
+}
+
+.transfer-message {
+    font-size: 1.5vw; /* Responsive font size */
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 0 5%;
+    }
+
+    #greeting {
+        font-size: 6vw;
+    }
+
+    #location {
+        font-size: 4vw;
+    }
+
+    .transfer-message {
+        font-size: 2.5vw;
+    }
+
+    .loading-bar {
+        height: 6px; /* Larger bar for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #greeting {
+        font-size: 8vw;
+    }
+
+    #location {
+        font-size: 5vw;
+    }
+
+    .loading-bar {
+        width: 90%;
+    }
+}
